@@ -1,0 +1,85 @@
+4
+mkdir SI_2024_lab1_223065
+cd SI_2024_lab1_223065
+git init
+5
+git remote add origin https://github.com/iskramarkovska/SI_2024_lab1_223065.git
+6
+nano README.md
+git add README.md
+git commit -m 'Initial commit'
+7 
+cp "C:\Users\hp\Downloads\SILab1Main.java" .
+cp "C:\Users\hp\Downloads\SILab1_1.java" .
+cp "C:\Users\hp\Downloads\SILab1_2.java" .
+git add .
+git commit -m 'Add starter code'
+8 
+git push -u origin master
+
+9
+git branch bug1
+git branch bug2
+10
+git checkout bug1
+11
+cp "C:\Users\hp\Downloads\SILab1_1.java" .
+git add .
+git commit -m 'Fix wrong condition in filterOddLengthStrings'
+12
+git checkout bug2
+13
+cp "C:\Users\hp\Downloads\SILab1_2.java" .
+git add .
+git commit -m 'Fix wrong condition in makeBigStringForm'
+14
+git checkout bug1
+15
+cp "C:\Users\hp\Downloads\SILab1Main.java" .
+git add .
+git commit -m 'Call method filterOddLengthStrings in main class'
+16
+git checkout bug2
+17
+git add .
+git commit -m 'Call method makeBigStringForm in main class'
+18
+git push -u origin bug1
+git push -u origin bug2
+19
+git checkout master
+20
+git pull origin master
+git merge bug1
+21
+git push origin master
+22
+git checkout bug2
+23
+git rebase master
+cp "C:\Users\hp\Downloads\SILab1Main.java" .
+git add .
+git commit -m 'Fix conflict of function called in row 16'
+git rebase --continue
+24
+git checkout master
+25
+git merge bug2
+26
+git push origin master
+27 
+git checkout bug1
+git push origin bug1
+git checkout bug2
+git pull
+git push origin bug2
+28
+git checkout master
+git log
+nano logs.txt
+git add logs.txt
+cp "C:\Users\hp\Desktop\223065.txt" .
+git add .
+git commit -m 'Final commit'
+29
+git push master origin
